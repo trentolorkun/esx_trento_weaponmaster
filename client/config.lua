@@ -21,7 +21,7 @@ Config.WeaponCategoryOffsets = {
 	-- • Pistolas detrás.
 	{category = 'backhandgun', bone = 58271, x = -0.01, y = 0.1,  z = -0.07, xRot = -55.0,  yRot = 0.10, zRot = 0.0},
 	-- • Pistolas en la cadena
-	{category = 'leghandgun', bone = 58271, x = -0.01, y = 0.1,  z = -0.07, xRot = -55.0,  yRot = 0.10, zRot = 0.0}
+	{category = 'leghandgun', bone = 51826, x = 0.175, y = 0.02, z = 0.134,  xRot = -100.0, yRot = -0.0,  zRot = -13.0}
 }
 
 Config.RealWeapons = {

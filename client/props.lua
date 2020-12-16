@@ -212,8 +212,8 @@ function SetGears()
 end
 
 
-RegisterNetEvent('esx_foras_weapons:executeCommand')
-AddEventHandler('esx_foras_weapons:executeCommand', function(args)
+RegisterNetEvent('esx_trento_weaponmaster:executeCommand')
+AddEventHandler('esx_trento_weaponmaster:executeCommand', function(args)
 
 	-- Then we start working with all the args we have.
 	if args[1] == '' then

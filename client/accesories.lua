@@ -38,8 +38,8 @@ AddEventHandler('esx:playerLoaded', function(xPlayer)
 end)
  
 -- Use item
-RegisterNetEvent('esx_forasteros_easyweapon:use')
-AddEventHandler('esx_forasteros_easyweapon:use', function( type )
+RegisterNetEvent('esx_trento_weaponmaster:use')
+AddEventHandler('esx_trento_weaponmaster:use', function( type )
     if weapons[GetSelectedPedWeapon(PlayerPedId())] and weapons[GetSelectedPedWeapon(PlayerPedId())][type] then
         if not HasPedGotWeaponComponent(GetPlayerPed(-1), GetSelectedPedWeapon(PlayerPedId()), weapons[GetSelectedPedWeapon(PlayerPedId())][type]) then
             GiveWeaponComponentToPed(GetPlayerPed(-1), GetSelectedPedWeapon(PlayerPedId()), weapons[GetSelectedPedWeapon(PlayerPedId())][type])  
@@ -54,8 +54,8 @@ AddEventHandler('esx_forasteros_easyweapon:use', function( type )
 end)
 
 -- Add tint 
-RegisterNetEvent('esx_forasteros_easyweapon:addtint')
-AddEventHandler('esx_forasteros_easyweapon:use', function(type)
+RegisterNetEvent('esx_trento_weaponmaster:addtint')
+AddEventHandler('esx_trento_weaponmaster:use', function(type)
     local inventory = ESX.GetPlayerData().inventory
 	local lspdtint = 0
 		for i=1, #inventory, 1 do
@@ -121,19 +121,19 @@ Citizen.CreateThread(function()
 				for k,v in pairs(weapons) do
 					if GetSelectedPedWeapon(PlayerPedId()) == k then
 						if HasPedGotWeaponComponent(GetPlayerPed(-1), GetSelectedPedWeapon(PlayerPedId()), v.supressor) then
-							TriggerServerEvent('esx_forasteros_easyweapon:giveBack', 'supressor')
+							TriggerServerEvent('esx_trento_weaponmaster:giveBack', 'supressor')
 							ESX.ShowNotification("Has retirado el silenciador de tu arma.")
 							RemoveWeaponComponentFromPed(GetPlayerPed(-1), GetSelectedPedWeapon(PlayerPedId()), v.supressor)
 						elseif HasPedGotWeaponComponent(GetPlayerPed(-1), GetSelectedPedWeapon(PlayerPedId()), v.flashlight) then
-							TriggerServerEvent('esx_forasteros_easyweapon:giveBack', 'flashlight')
+							TriggerServerEvent('esx_trento_weaponmaster:giveBack', 'flashlight')
 							ESX.ShowNotification("Has retirado la linterna de tu arma.")
 							RemoveWeaponComponentFromPed(GetPlayerPed(-1), GetSelectedPedWeapon(PlayerPedId()), v.flashlight)
 						elseif HasPedGotWeaponComponent(GetPlayerPed(-1), GetSelectedPedWeapon(PlayerPedId()), v.weaponskin) then
-							TriggerServerEvent('esx_forasteros_easyweapon:giveBack', 'weaponskin')
+							TriggerServerEvent('esx_trento_weaponmaster:giveBack', 'weaponskin')
 							ESX.ShowNotification("Has retirado la apariencia personalizada de tu arma.")
 							RemoveWeaponComponentFromPed(GetPlayerPed(-1), GetSelectedPedWeapon(PlayerPedId()), v.weaponskin)
 						elseif HasPedGotWeaponComponent(GetPlayerPed(-1), GetSelectedPedWeapon(PlayerPedId()), v.grip) then
-							TriggerServerEvent('esx_forasteros_easyweapon:giveBack', 'grip')
+							TriggerServerEvent('esx_trento_weaponmaster:giveBack', 'grip')
 							ESX.ShowNotification("Has retirado la empuñadura de tu arma.")
 							RemoveWeaponComponentFromPed(GetPlayerPed(-1), GetSelectedPedWeapon(PlayerPedId()), v.grip)
                         end
