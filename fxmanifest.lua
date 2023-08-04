@@ -2,9 +2,9 @@ fx_version 'adamant'
 
 game 'gta5'
 
-description 'Forasteros ESX weapons on body by Trento'
+description 'ESX weapons on body by Trento'
 
-version '0.2.0'
+version '1.0.0'
 
 client_scripts {
 	'client/config.lua',
